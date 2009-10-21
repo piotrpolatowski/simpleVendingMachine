@@ -1,0 +1,16 @@
+"CoinManagment.aut" = generation of
+   (hide "empty" in
+      ("CSM.aut"|["empty"]|"CS.aut"));
+
+"BottleManagment.aut" = generation of
+   (hide "refill" in
+      ("BSM.aut" |["refill"]| "BS.aut"));
+
+"VendingMachine.aut" = generation of
+   hide "getBottle" in
+      (hide "storeCoin" in
+         ("PN.aut" |["storeCoin"]| "CoinManagment.aut") |["getBottle"]| "BottleManagment.aut");
+
+"SimpleMA.aut" = generation of
+   hide "refill", "empty" in
+   ("VendingMachine.aut" |["coin", "bottleOfCoke"]| "CU.aut");

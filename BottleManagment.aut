@@ -1,0 +1,5 @@
+des (0, 4, 4)
+(0, getBottle, 1)
+(1, getBottle, 2)
+(2, getBottle, 3)
+(3, refill, 0)

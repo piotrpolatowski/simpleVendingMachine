@@ -1,0 +1,5 @@
+des(0,4,4)
+(0,"coin",1)
+(1,"storeCoin",2)
+(2,"getBottle",3)
+(3,"bottleOfCoke",0)

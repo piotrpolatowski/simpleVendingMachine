@@ -1,0 +1,186 @@
+
+svl clean info: [persistent] CoinManagment.aut
+
+svl clean info: [temporary] CoinManagment.exp
+
+% 2>>"vendingMachine.log" rm -f "CoinManagment.exp" ; touch "CoinManagment.exp"
+command exit with status 0
+
+"CoinManagment.exp" =
+    "CSM.aut"
+    |["empty"]|
+    "CS.aut"
+
+"CoinManagment.aut" = generation of "CoinManagment.exp"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] CoinManagment.c
+
+svl clean info: [temporary] CoinManagment.o
+
+svl clean info: [temporary] svl000_output.bcg
+
+% 1>&2 exp.open    "CoinManagment.exp"  generator  "svl000_output.bcg"
+-- exp.open 2.1 -- Frederic Lang (INRIA Rhone-Alpes) --
+exp.open: using ``/appl/cadp/2008-e-rc7/src/open_caesar/generator.c''
+exp.open: generating CoinManagment.c ...
+exp2c: converting ``CSM.aut'' into ``CSM.bcg''
+exp2c: converting ``CS.aut'' into ``CS.bcg''
+exp.open: compiling CoinManagment.c ...
+/appl/cadp/2008-e-rc7/src/com/cadp_cc   -c -I/appl/cadp/2008-e-rc7/incl -o CoinManagment.o CoinManagment.c
+/appl/cadp/2008-e-rc7/src/com/cadp_cc -I. -I/appl/cadp/2008-e-rc7/incl -I/appl/cadp/2008-e-rc7/src/open_caesar  -c /appl/cadp/2008-e-rc7/src/open_caesar/generator.c -o generator.o
+/appl/cadp/2008-e-rc7/src/com/cadp_cc  generator.o CoinManagment.o -o generator -L/appl/cadp/2008-e-rc7/bin.x64 -lexp_open -L/appl/cadp/2008-e-rc7/bin.x64 -lBCG_IO -lBCG -lcaesar -lm -L/appl/cadp/2008-e-rc7/bin.x64 -lBCG_IO -lBCG -lm
+exp.open: running ``generator svl000_output.bcg'' for ``./CoinManagment.exp''
+command exit with status 0
+
+svl clean info: [temporary] svl000_output.bcg
+
+% 1>&2 bcg_io   "svl000_output.bcg"   "CoinManagment.aut"
+command exit with status 0
+
+info about CoinManagment.aut:
+    (* 6 states, 6 transitions, 0.1 Kbytes *)
+
+svl clean info: [persistent] BottleManagment.aut
+
+svl clean info: [temporary] BottleManagment.exp
+
+% 2>>"vendingMachine.log" rm -f "BottleManagment.exp" ; touch "BottleManagment.exp"
+command exit with status 0
+
+"BottleManagment.exp" =
+    "BSM.aut"
+    |["refill"]|
+    "BS.aut"
+
+"BottleManagment.aut" = generation of "BottleManagment.exp"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] BottleManagment.c
+
+svl clean info: [temporary] BottleManagment.o
+
+svl clean info: [temporary] svl000_output.bcg
+
+% 1>&2 exp.open    "BottleManagment.exp"  generator  "svl000_output.bcg"
+-- exp.open 2.1 -- Frederic Lang (INRIA Rhone-Alpes) --
+exp.open: using ``/appl/cadp/2008-e-rc7/src/open_caesar/generator.c''
+exp.open: generating BottleManagment.c ...
+exp2c: converting ``BSM.aut'' into ``BSM.bcg''
+exp2c: converting ``BS.aut'' into ``BS.bcg''
+exp.open: compiling BottleManagment.c ...
+/appl/cadp/2008-e-rc7/src/com/cadp_cc   -c -I/appl/cadp/2008-e-rc7/incl -o BottleManagment.o BottleManagment.c
+/appl/cadp/2008-e-rc7/src/com/cadp_cc -I. -I/appl/cadp/2008-e-rc7/incl -I/appl/cadp/2008-e-rc7/src/open_caesar  -c /appl/cadp/2008-e-rc7/src/open_caesar/generator.c -o generator.o
+/appl/cadp/2008-e-rc7/src/com/cadp_cc  generator.o BottleManagment.o -o generator -L/appl/cadp/2008-e-rc7/bin.x64 -lexp_open -L/appl/cadp/2008-e-rc7/bin.x64 -lBCG_IO -lBCG -lcaesar -lm -L/appl/cadp/2008-e-rc7/bin.x64 -lBCG_IO -lBCG -lm
+exp.open: running ``generator svl000_output.bcg'' for ``./BottleManagment.exp''
+command exit with status 0
+
+svl clean info: [temporary] svl000_output.bcg
+
+% 1>&2 bcg_io   "svl000_output.bcg"   "BottleManagment.aut"
+command exit with status 0
+
+info about BottleManagment.aut:
+    (* 4 states, 4 transitions, 0.0 Kbytes *)
+
+svl clean info: [persistent] VendingMachine.aut
+
+svl clean info: [temporary] VendingMachine.exp
+
+% 2>>"vendingMachine.log" rm -f "VendingMachine.exp" ; touch "VendingMachine.exp"
+command exit with status 0
+
+"VendingMachine.exp" =
+    (
+        "PN.aut"
+        |["storeCoin"]|
+        "CoinManagment.aut"
+    )
+    |["getBottle"]|
+    "BottleManagment.aut"
+
+"VendingMachine.aut" = generation of "VendingMachine.exp"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] VendingMachine.c
+
+svl clean info: [temporary] VendingMachine.o
+
+svl clean info: [temporary] svl000_output.bcg
+
+% 1>&2 exp.open    "VendingMachine.exp"  generator  "svl000_output.bcg"
+-- exp.open 2.1 -- Frederic Lang (INRIA Rhone-Alpes) --
+exp.open: using ``/appl/cadp/2008-e-rc7/src/open_caesar/generator.c''
+exp.open: generating VendingMachine.c ...
+exp2c: converting ``PN.aut'' into ``PN.bcg''
+exp2c: converting ``CoinManagment.aut'' into ``CoinManagment.bcg''
+exp2c: converting ``BottleManagment.aut'' into ``BottleManagment.bcg''
+exp.open: compiling VendingMachine.c ...
+/appl/cadp/2008-e-rc7/src/com/cadp_cc   -c -I/appl/cadp/2008-e-rc7/incl -o VendingMachine.o VendingMachine.c
+/appl/cadp/2008-e-rc7/src/com/cadp_cc -I. -I/appl/cadp/2008-e-rc7/incl -I/appl/cadp/2008-e-rc7/src/open_caesar  -c /appl/cadp/2008-e-rc7/src/open_caesar/generator.c -o generator.o
+/appl/cadp/2008-e-rc7/src/com/cadp_cc  generator.o VendingMachine.o -o generator -L/appl/cadp/2008-e-rc7/bin.x64 -lexp_open -L/appl/cadp/2008-e-rc7/bin.x64 -lBCG_IO -lBCG -lcaesar -lm -L/appl/cadp/2008-e-rc7/bin.x64 -lBCG_IO -lBCG -lm
+exp.open: running ``generator svl000_output.bcg'' for ``./VendingMachine.exp''
+command exit with status 0
+
+svl clean info: [temporary] svl000_output.bcg
+
+% 1>&2 bcg_io   "svl000_output.bcg"   "VendingMachine.aut"
+command exit with status 0
+
+info about VendingMachine.aut:
+    (* 96 states, 126 transitions, 2.2 Kbytes *)
+
+svl clean info: [persistent] SimpleMA.aut
+
+svl clean info: [temporary] SimpleMA.exp
+
+% 2>>"vendingMachine.log" rm -f "SimpleMA.exp" ; touch "SimpleMA.exp"
+command exit with status 0
+
+"SimpleMA.exp" =
+    "VendingMachine.aut"
+    |["coin", "bottleOfCoke"]|
+    "CU.aut"
+
+"SimpleMA.aut" = generation of "SimpleMA.exp"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] SimpleMA.c
+
+svl clean info: [temporary] SimpleMA.o
+
+svl clean info: [temporary] svl000_output.bcg
+
+% 1>&2 exp.open    "SimpleMA.exp"  generator  "svl000_output.bcg"
+-- exp.open 2.1 -- Frederic Lang (INRIA Rhone-Alpes) --
+exp.open: using ``/appl/cadp/2008-e-rc7/src/open_caesar/generator.c''
+exp.open: generating SimpleMA.c ...
+exp2c: converting ``VendingMachine.aut'' into ``VendingMachine.bcg''
+exp2c: converting ``CU.aut'' into ``CU.bcg''
+exp.open: compiling SimpleMA.c ...
+/appl/cadp/2008-e-rc7/src/com/cadp_cc   -c -I/appl/cadp/2008-e-rc7/incl -o SimpleMA.o SimpleMA.c
+/appl/cadp/2008-e-rc7/src/com/cadp_cc -I. -I/appl/cadp/2008-e-rc7/incl -I/appl/cadp/2008-e-rc7/src/open_caesar  -c /appl/cadp/2008-e-rc7/src/open_caesar/generator.c -o generator.o
+/appl/cadp/2008-e-rc7/src/com/cadp_cc  generator.o SimpleMA.o -o generator -L/appl/cadp/2008-e-rc7/bin.x64 -lexp_open -L/appl/cadp/2008-e-rc7/bin.x64 -lBCG_IO -lBCG -lcaesar -lm -L/appl/cadp/2008-e-rc7/bin.x64 -lBCG_IO -lBCG -lm
+exp.open: running ``generator svl000_output.bcg'' for ``./SimpleMA.exp''
+command exit with status 0
+
+svl clean info: [temporary] svl000_output.bcg
+
+% 1>&2 bcg_io   "svl000_output.bcg"   "SimpleMA.aut"
+command exit with status 0
+
+info about SimpleMA.aut:
+    (* 96 states, 126 transitions, 2.2 Kbytes *)
+

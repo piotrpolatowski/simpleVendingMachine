@@ -1,0 +1,11 @@
+"CoinManagment.aut" = generation of
+      ("CSM.aut"|["empty"]|"CS.aut");
+
+"BottleManagment.aut" = generation of
+      ("BSM.aut" |["refill"]| "BS.aut");
+
+"VendingMachine.aut" = generation of
+         ("PN.aut" |["storeCoin"]| "CoinManagment.aut") |["getBottle"]| "BottleManagment.aut";
+
+"SimpleMA.aut" = generation of
+   ("VendingMachine.aut" |["coin", "bottleOfCoke"]| "CU.aut");
